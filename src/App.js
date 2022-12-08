@@ -48,14 +48,15 @@ function App() {
   if(mode === 'WELCOME'){
     content = <Article title="Welcome" body="Hello, WEB"></Article>
     } else if(mode === 'READ') {
+      let title, body = null;
       for(let i = 0; i < topics.length; i++){
-        let title = topics[i].title;
-        let body = topics[i].body;
         console.log(topics[i].id, id);
         if(topics[i].id === id){
-          content = <Article title={title} body={body}></Article>
+          title = topics[i].title;
+          body = topics[i].body;
         }
-    }
+      }
+      content = <Article title={title} body={body}></Article>
     }
   return (
     <div>

@@ -16,8 +16,7 @@ function Nav(props){
     let t = props.topics[i];
     lis.push(<li key={t.id}><a id={t.id} href={'/html/'+t.id} onClick={(event)=>{
       event.preventDefault();
-      // props.onChangeMode(Number(event.target.id));
-      props.onChangeMode(event.target.id);
+      props.onChangeMode(Number(event.target.id));
     }}>{t.title}</a></li>)
   }
   return <nav>
